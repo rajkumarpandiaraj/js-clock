@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+            <div class="clock-inner">
+                <div class="hand second"></div>
+                <div class="hand minute"></div>
+                <div class="hand hour"></div>
+
+    
+            </div>
+            <div class="black"></div>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const hour = document.querySelector('.hour');
+    const minute = document.querySelector('.minute');
+    const second = document.querySelector('.second');
+    setInterval(() => {
+        const time = new Date();
+        const s = time.getSeconds();
+        const m = time.getMinutes();
+        const h = time.getHours();
+
+        second.style.transform = `rotate(${((s/60)*360) + 90}deg)` ;
+        minute.style.transform = `rotate(${((m/60)*360) + 90}deg)` ;
+        hour.style.transform = `rotate(${((h/24)*360) + 90}deg)` ;
+
+        // console.log(`rotate(${((s/60)*360) + 90} deg)`);
+        // console.log(second);
+        
+        
+
+    }, 1000);
+
+</script>
+</html>
